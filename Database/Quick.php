@@ -24,6 +24,7 @@ $method = explode('.', $method)[0];
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
-$args   = '';
-$result = 'Exception: Has not been instantiate PDO.';
-$ci->Set($method, $result, $args);
+$message = 'Quick() is QQL() wrapper.';
+$args    = [''];
+$result  = 'Exception: SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name \'\'';
+$ci->Set( $method, $result, $args, message:$message );
