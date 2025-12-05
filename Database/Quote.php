@@ -23,7 +23,8 @@ $method = explode('.', $method)[0];
 
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
-//	...
-$args   =  null;
-$result =  null;
-$ci->Set($method, $result, $args);
+//	1st time
+$message = '1st time';
+$args    = '`Quote';
+$result  = 'Exception: An invalid character string is included: `Quote';
+$ci->Set( $method, $result, $args, message:$message );
