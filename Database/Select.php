@@ -2,10 +2,9 @@
 /**	op-unit-database-ci:/Database/Select.php
  *
  * @created    2025-11-26
- * @version    1.0
+ * @license    Apache-2.0
  * @package    op-unit-database-ci
- * @author     Tomoaki Nagahara
- * @copyright  Tomoaki Nagahara All rights reserved.
+ * @copyright  (C) 2025 Tomoaki Nagahara
  */
 
 /**	Declare strict type
