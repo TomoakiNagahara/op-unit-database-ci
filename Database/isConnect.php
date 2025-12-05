@@ -24,6 +24,6 @@ $method = explode('.', $method)[0];
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
-$args   =  null;
-$result =  false;
+$args   = [];
+$result = 'Notice: No PDO with this label name has been set: default';
 $ci->Set($method, $result, $args);
