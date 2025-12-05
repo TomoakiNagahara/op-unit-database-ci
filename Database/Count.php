@@ -24,6 +24,6 @@ $method = explode('.', $method)[0];
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
-$args   =  null;
+$args   = [[]];
 $result = 'Exception: Has not been set "table".';
 $ci->Set($method, $result, $args);
