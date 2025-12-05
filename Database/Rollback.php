@@ -23,7 +23,15 @@ $method = explode('.', $method)[0];
 
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
-//	...
-$args   =  null;
-$result =  null;
-$ci->Set($method, $result, $args);
+//	1st time
+$message = '1st time';
+$prepare = function(){ OP()->Unit()->Database()->Transaction(); };
+$args   = [];
+$result = true;
+$ci->Set( $method, $result, $args, $prepare, message:$message );
+
+//	2nd time
+$message = '2nd time';
+$args    = [];
+$result  = 'Exception: There is no active transaction';
+$ci->Set( $method, $result, $args, message:$message );
