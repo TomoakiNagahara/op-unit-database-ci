@@ -24,6 +24,7 @@ $method = explode('.', $method)[0];
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
-$args   = ['','',''];
-$result =  null;
-$ci->Set($method, $result, $args);
+$message = 'Execute() is wrapper of Select()';
+$args   = [' ai <- t_testcase.ai = 1 ','limit = 1'];
+$result = '1';
+$ci->Set( $method, $result, $args, message:$message );
