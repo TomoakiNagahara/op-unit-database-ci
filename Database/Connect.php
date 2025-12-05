@@ -24,6 +24,17 @@ $method = explode('.', $method)[0];
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
-$args   =  null;
-$result = 'Exception: Database connect config is empty.';
+$config = [
+	'driver'   => 'mysql',
+	'host'     => 'localhost',
+	'port'     =>  null,
+	'database' => 'testcase',
+	'user'     => 'testcase',
+	'password' => 'testcase',
+	'charset'  => 'utf8',
+];
+
+//	...
+$args   = [$config];
+$result =  true;
 $ci->Set($method, $result, $args);
