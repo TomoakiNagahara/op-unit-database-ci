@@ -24,6 +24,31 @@ $method = explode('.', $method)[0];
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
-$args   = '';
-$result = 'Exception: Has not been instantiate PDO.';
-$ci->Set($method, $result, $args);
+$message = 'Positive case';
+$args    = [' ai <- t_testcase.ai = 1 ', 'limit = 1'];
+$result  = '1';
+$ci->Set( $method, $result, $args, message:$message );
+
+//	...
+$message = 'Positive case - limit is not set';
+$args    = [' ai <- t_testcase.ai = 1 '];
+$result  = [ 0 => '1' ];
+$ci->Set( $method, $result, $args, message:$message );
+
+//	...
+$message = 'Positive case - ai, number';
+$args    = ['ai, number <- t_testcase.ai = 1', 'limit = 1'];
+$result  = ['ai'=>'1', 'number'=>'2030'];
+$ci->Set( $method, $result, $args, message:$message );
+
+//	...
+$message = 'Positive case - ai, number, empty option';
+$args    = ['ai, number <- t_testcase.ai = 1'];
+$result  = [0=>['ai'=>'1', 'number'=>'2030']];
+$ci->Set( $method, $result, $args, message:$message );
+
+//	...
+$message = 'Positive case - ai > 0';
+$args    = ['ai, number <- t_testcase.ai > 0', 'limit = 1'];
+$result  = ['ai'=>'1', 'number'=>'2030'];
+$ci->Set( $method, $result, $args, message:$message );
