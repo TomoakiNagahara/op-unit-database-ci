@@ -25,5 +25,5 @@ $method = explode('.', $method)[0];
 
 //	...
 $args   = [[]];
-$result = 'Exception: prod is empty.';
+$result = 'Notice: driver is empty.';
 $ci->Set($method, $result, $args);
