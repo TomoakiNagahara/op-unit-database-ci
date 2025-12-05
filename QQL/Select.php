@@ -24,6 +24,17 @@ $method = explode('.', $method)[0];
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
-$args   = ['','',''];
-$result =  null;
-$ci->Set($method, $result, $args);
+$message = 'Positive case';
+$select = [
+	'database' => null,
+	'field'    => 'ai',
+	'table'    => 't_testcase',
+	'where'    => 'WHERE ai = 1',
+	'limit'    => 'LIMIT 1',
+	'order'    => null,
+	'offset'   => null,
+	'group'    => null,
+];
+$args   = [$select];
+$result = '1';
+$ci->Set( $method, $result, $args, message:$message );
