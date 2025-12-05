@@ -23,7 +23,14 @@ $method = explode('.', $method)[0];
 
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
-//	...
-$args   =  null;
-$result =  null;
-$ci->Set($method, $result, $args);
+//	1st time
+$args    = [];
+$result  = true;
+$message = '1st time';
+$ci->Set( $method, $result, $args, message:$message );
+
+//	2nd time
+$args    = [];
+$result  = 'Exception: There is already an active transaction';
+$message = '2nd time';
+$ci->Set( $method, $result, $args, message:$message );
