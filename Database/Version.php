@@ -25,5 +25,5 @@ $method = explode('.', $method)[0];
 
 //	...
 $args   = '';
-$result = 'Exception: Has not been instantiate PDO.';
+$result = '11.4.7-MariaDB';
 $ci->Set($method, $result, $args);
