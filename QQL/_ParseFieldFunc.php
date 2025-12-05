@@ -24,6 +24,13 @@ $method = explode('.', $method)[0];
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
-$args   = ['',''];
-$result = 'Exception: Call to a member function Quote() on string';
-$ci->Set($method, $result, $args);
+$message = 'Positive case';
+$args   = ['FIELD'];
+$result = '`FIELD`';
+$ci->Set( $method, $result, $args, message:$message );
+
+//	...
+$message = 'Negative case';
+$args   = ['`FIELD'];
+$result = 'Exception: An invalid character string is included: `FIELD';
+$ci->Set( $method, $result, $args, message:$message );
