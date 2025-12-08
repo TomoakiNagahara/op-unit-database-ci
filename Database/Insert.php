@@ -25,5 +25,5 @@ $method = explode('.', $method)[0];
 
 //	...
 $args   = [[]];
-$result = 'Exception: Has not been set table name.';
+$result = 'Exception: A table name has not been set.';
 $ci->Set($method, $result, $args);

@@ -25,5 +25,5 @@ $method = explode('.', $method)[0];
 
 //	...
 $args   = [[]];
-$result = 'Exception: Has not been set "table".';
+$result = 'Notice: This value has not been set: table';
 $ci->Set($method, $result, $args);
