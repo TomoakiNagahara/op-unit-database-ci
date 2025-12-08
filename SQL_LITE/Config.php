@@ -25,5 +25,5 @@ $method = explode('.', $method)[0];
 
 //	...
 $args   = [[]];
-$result = 'Exception: Has not been set file path.';
+$result = 'Exception: SQLite file path is not set.';
 $ci->Set($method, $result, $args);
