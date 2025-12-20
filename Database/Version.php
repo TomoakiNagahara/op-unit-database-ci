@@ -25,5 +25,5 @@ $method = explode('.', $method)[0];
 
 //	...
 $args   = '';
-$result = '11.4.7-MariaDB';
+$result = 'CI';
 $ci->Set($method, $result, $args);
