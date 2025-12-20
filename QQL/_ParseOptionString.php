@@ -24,6 +24,6 @@ $method = explode('.', $method)[0];
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
-$args   = null;
-$result = null;
+$args   = [];
+$result = [];
 $ci->Set($method, $result, $args);

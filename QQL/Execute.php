@@ -21,10 +21,17 @@ namespace OP;
 $method = basename(__FILE__);
 $method = explode('.', $method)[0];
 
+//	...
+$php = PHP_MAJOR_VERSION.PHP_MINOR_VERSION;
+$ai  = 1;
+if( $php == 80 ){
+	$ai = (string)$ai;
+}
+
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
 $message = 'Execute() is wrapper of Select()';
 $args   = [' ai <- t_testcase.ai = 1 ','limit = 1'];
-$result = '1';
+$result = $ai;
 $ci->Set( $method, $result, $args, message:$message );

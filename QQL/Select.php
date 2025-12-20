@@ -21,6 +21,13 @@ namespace OP;
 $method = basename(__FILE__);
 $method = explode('.', $method)[0];
 
+//	...
+$php = PHP_MAJOR_VERSION.PHP_MINOR_VERSION;
+$ai  = 1;
+if( $php == 80 ){
+	$ai = (string)$ai;
+}
+
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
@@ -36,5 +43,5 @@ $select = [
 	'group'    => null,
 ];
 $args   = [$select];
-$result = '1';
+$result =  $ai;
 $ci->Set( $method, $result, $args, message:$message );
