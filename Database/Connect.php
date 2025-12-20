@@ -23,6 +23,7 @@ $method = explode('.', $method)[0];
 
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
+/* MySQL
 //	...
 $config = [
 	'driver'   => 'mysql',
@@ -37,4 +38,13 @@ $config = [
 //	...
 $args   = [$config];
 $result =  true;
+$ci->Set($method, $result, $args);
+*/
+
+//	...
+$args   = [[
+	'driver' => 'sqlite',
+	'path'   => OP()->Path('asset:/db/ci/Database.sqlite3'),
+]];
+$result = true;
 $ci->Set($method, $result, $args);
