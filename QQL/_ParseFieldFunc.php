@@ -26,11 +26,11 @@ $method = explode('.', $method)[0];
 //	...
 $message = 'Positive case';
 $args   = ['FIELD'];
-$result = '`FIELD`';
+$result = '"FIELD"';
 $ci->Set( $method, $result, $args, message:$message );
 
 //	...
 $message = 'Negative case';
 $args   = ['`FIELD'];
-$result = 'Exception: An invalid character string is included: `FIELD';
+$result = 'Exception: The string contains invalid characters: `FIELD --> `';
 $ci->Set( $method, $result, $args, message:$message );

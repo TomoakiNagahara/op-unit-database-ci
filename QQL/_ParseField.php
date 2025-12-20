@@ -24,7 +24,7 @@ $method = explode('.', $method)[0];
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
 //	...
-$message = 'Positive case';
+$message = 'Negative case';
 $args    = '`FIELD_NAME';
-$result  = 'Exception: An invalid character string is included: `FIELD_NAME';
+$result  = 'Exception: The string contains invalid characters: `FIELD_NAME --> `';
 $ci->Set( $method, $result, $args, message:$message );
