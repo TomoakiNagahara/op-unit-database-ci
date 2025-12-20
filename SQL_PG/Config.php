@@ -25,5 +25,9 @@ $method = explode('.', $method)[0];
 
 //	...
 $args   = [[]];
-$result = 'Exception: php-postgresql is not installed.';
+if( extension_loaded('pdo_pgsql') ){
+	$result = [];
+}else{
+	$result = 'Exception: php-pdo_pgsql is not installed.';
+}
 $ci->Set($method, $result, $args);
