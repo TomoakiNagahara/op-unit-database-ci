@@ -26,5 +26,5 @@ $method = explode('.', $method)[0];
 //	...
 $message = 'Quick() is QQL() wrapper.';
 $args    = [''];
-$result  = 'Exception: SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name \'\'';
+$result  = 'Exception: SQLSTATE[HY000]: General error: 1 no such table: ';
 $ci->Set( $method, $result, $args, message:$message );
