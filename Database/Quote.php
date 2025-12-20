@@ -23,8 +23,50 @@ $method = explode('.', $method)[0];
 
 /* @var $ci \OP\UNIT\CI\CI_Config */
 
-//	1st time
-$message = '1st time';
+//	...
+$message = 'MySQL - first character';
 $args    = '`Quote';
-$result  = 'Exception: An invalid character string is included: `Quote';
+$result  = 'Exception: The string contains invalid characters: `Quote --> `';
+$ci->Set( $method, $result, $args, message:$message );
+
+//	...
+$message = 'MySQL - last character';
+$args    = 'Quote`';
+$result  = 'Exception: The string contains invalid characters: Quote` --> `';
+$ci->Set( $method, $result, $args, message:$message );
+
+//	...
+$message = 'MySQL - middle character';
+$args    = 'Quo`e';
+$result  = 'Exception: The string contains invalid characters: Quo`e --> `';
+$ci->Set( $method, $result, $args, message:$message );
+
+//	...
+$message = 'MySQL - both sides characters';
+$args    = '`Quote`';
+$result  = 'Exception: The string contains invalid characters: `Quote` --> `';
+$ci->Set( $method, $result, $args, message:$message );
+
+//	...
+$message = 'SQLite - first character';
+$args    = '"Quote';
+$result  = 'Exception: The string contains invalid characters: "Quote --> "';
+$ci->Set( $method, $result, $args, message:$message );
+
+//	...
+$message = 'SQLite - last character';
+$args    = 'Quote"';
+$result  = 'Exception: The string contains invalid characters: Quote" --> "';
+$ci->Set( $method, $result, $args, message:$message );
+
+//	...
+$message = 'SQLite - middle character';
+$args    = 'Quo"e';
+$result  = 'Exception: The string contains invalid characters: Quo"e --> "';
+$ci->Set( $method, $result, $args, message:$message );
+
+//	...
+$message = 'SQLite - both sides characters';
+$args    = '"Quote"';
+$result  = 'Exception: The string contains invalid characters: "Quote" --> "';
 $ci->Set( $method, $result, $args, message:$message );
